@@ -5,3 +5,50 @@
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
+body{
+  justify-content: center;
+  background-image: url("./bg.jpg");
+  display: flex;
+  align-items: center;
+  background-size:30%; /* Ensures the image displays in its original size */
+  height: 100vh;
+  color: whitesmoke;
+}
+.container{
+  height: 90vh;
+  width: 95vh;
+  background-color: rgba(16, 89, 94, 0.71);
+  
+  display: flex;
+  border-radius: 12px;
+  border: 1px solid rgb(rgba(255, 250, 250, 0.606));
+  position: relative;
+  z-index: 1; /* Ensure content is above the background layer */
+  padding: 10px; /* Adjust padding to your preference */
+}
+/* Container div */
+.blur-overlay {
+  position: relative;
+}
+
+/* Background layer */
+.blur-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('./bg4.jpg'); /* Path to your image */
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px) saturate(180%);
+  z-index: -1; /* Places this layer behind the content */
+}
+
+/* Content layer */
+.content {
+  position: relative;
+  z-index: 1; /* Ensure content is above the background layer */
+  padding: 20px; /* Adjust padding to your preference */
+}
